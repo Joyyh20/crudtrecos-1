@@ -1,5 +1,5 @@
 # Importa as dependências do aplicativo
-from Flask import Flask, render_template
+from flask import Flask, render_template
 
 # Cria um aplicativo Flask chamado "app"
 app = Flask(__name__)
