@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/_template.css">
     <link rel="shortcut icon" href="/static/img/favicon.png">
-    <title>CRUDTrecos</title>
+    <title>{{ titulo }}</title>
 </head>
 
 <body>
@@ -31,12 +31,7 @@
         </nav>
 
         <main>
-
-            <h2>Teste</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quam incidunt nemo vitae aliquam iste
-                autem quasi quos dolorem rem velit nisi neque nostrum magnam enim asperiores corrupti, ipsum molestias.
-            </p>
-
+            {% block conteudo %}{% endblock %}
         </main>
 
         <footer>
