@@ -1,0 +1,28 @@
+{# Inclui o template principal nesta página #}
+{% extends '_template.html' %}
+
+{# Bloco com conteúdo desta página #}
+{% block conteudo %}
+
+<h2>Cadastre-se</h2>
+<p>Você precisa se cadastrar para gerenciar sua coleção.</p>
+<p>Preencha todos os campos para se cadastrar.</p>
+
+<form action="/cadastro" method="post" id="form-cadastro">
+
+<p>
+    <label for="nome">Nome:</label>
+    in
+</p>
+
+
+</form>
+
+
+
+u_nome VARCHAR(127) NOT NULL,
+    u_nascimento DATE NOT NULL,
+    u_email VARCHAR(255) NOT NULL,
+    u_senha VARCHAR(63) NOT NULL,
+
+{% endblock %}

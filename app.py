@@ -1,5 +1,5 @@
 # Importa as dependências do aplicativo
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # Cria um aplicativo Flask chamado "app"
 app = Flask(__name__)
@@ -27,17 +27,42 @@ def index():  # Função executada ao acessar a rota raiz
     return render_template('index.html', **pagina)
 
 
-@app.route('/novo')  # Rota para a página de cadastro de novo treco
+# Rota para a página de cadastro de novo treco
+@app.route('/novo', methods=['GET', 'POST'])
 def novo():  # Função executada para cadastrar novo treco
+
+    # Se o formulário foi enviado
+    if request.method == 'POST':
+
+        # Obtém os dados preenchidos na forma de dicionário
+        form = dict(request.form)
+
+        # Teste de mesa (comente depois dos testes)
+        # Verifica se os dados do formulário chegaram ao back-end
+        print('\n\n\n', form, '\n\n\n')
+
+        # Em breve: grava os dados no banco de dados e segue o fluxo
 
     # Dados, variáveis e valores a serem passados para o template HTML
     pagina = {
-        'titulo': 'CRUDTrecos',
+        'titulo': 'CRUDTrecos - Novo Treco',
         'usuario': usuario
     }
 
     # Renderiza o template HTML, passaod valores para ele
-    return render_template('index.html', **pagina)
+    return render_template('novo.html', **pagina)
+
+
+@app.route('/login', methods=['GET', 'POST'])  # Rota para login de usuário
+def login():
+
+    # Dados, variáveis e valores a serem passados para o template HTML
+    pagina = {
+        'titulo': 'CRUDTrecos - Login',
+        'usuario': usuario
+    }
+
+    return render_template('login.html', **pagina)
 
 
 # Executa o servidor HTTP se estiver no modo de desenvolvimento
